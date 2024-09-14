@@ -1,35 +1,36 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/components/ui/link";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-function Contador() {
-  const [count, setCount] = useState(0);
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="flex justify-center h-[100vh] w-[100vw]">
-      <div className="flex justify-center flex-col max-w-96 gap-2 text-center">
-        <h1 className=" font-extrabold text-3xl">EL SWITCHER</h1>
-        <h2>Contador: {count}</h2>
-        <div className="flex justify-between gap-2">
-          <Button
-            className="w-full h-8 text-3xl"
-            onClick={() => setCount((c) => c + 1)}
-          >
-            +
-          </Button>
-          <Button
-            className="w-full h-8 text-3xl"
-            onClick={() => setCount((c) => c - 1)}
-          >
-            -
-          </Button>
-        </div>
-        <Link to="/" variant="outline">
-          Ir a Home
-        </Link>
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-    </div>
-  );
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default Contador;
+export default App
+
